@@ -1,0 +1,94 @@
+#app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {
+    text-align: center;
+    background-color: lightblue;
+    padding: 20px;
+    border-bottom: 2px solid #000;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #3683b3;
+    margin-top: auto;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 180px repeat(auto-fit, 180px); /* first column for Add, rest for books */
+    gap: 20px;
+    justify-content: start; /* align grid items to the left */
+    align-items: start; /* align items vertically at the top */
+    padding: 30px;
+}
+
+.book {
+    width: 180px;
+    height: 320px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.add-button {
+    width: 180px;
+    height: 320px;
+    grid-column: 1 / 2; /* force it into first column */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 2px solid #716d6d;
+    background-color: #f7f7f7;
+}
+
+.book__img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+}
+
+.book__title {
+    font-size: 16px;
+    margin: 10px 0 5px;
+    text-align: center;
+    color: green;
+}
+
+.book__author {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    text-align: center;
+    color: #555;
+}
+
+.book__link {
+    text-decoration: none; /* Remove underline on the additional information */
+    color: #1a73e8;
+    text-align: center;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.book:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Make shadow appear on hover */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Make it transition smooth for transform and shadow */
+}
+
+.add-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
